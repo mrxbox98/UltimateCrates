@@ -4,22 +4,19 @@ import com.google.gson.Gson;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Crate {
 
-    ArrayList<CrateReward> rewards = new ArrayList<>();
+    public ArrayList<CrateReward> rewards = new ArrayList<>();
 
     public static ArrayList<Crate> crates = new ArrayList<>();
 
-    String name;
+    public String name;
 
-    int id;
+    public int id;
 
     public Crate(String name)
     {
@@ -69,5 +66,7 @@ public class Crate {
         Gson gson = new Gson();
         return gson.fromJson(str, Crate.class);
     }
+
+
 
 }
