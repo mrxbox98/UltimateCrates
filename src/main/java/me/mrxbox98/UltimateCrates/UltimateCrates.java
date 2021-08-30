@@ -8,7 +8,7 @@ public class UltimateCrates extends JavaPlugin {
 
     public static String mcVersion;
 
-    public static String version;
+    public static String version="0.0.1";
 
     @Override
     public void onEnable()
