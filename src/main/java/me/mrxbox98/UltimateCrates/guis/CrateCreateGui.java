@@ -54,7 +54,7 @@ public class CrateCreateGui implements Listener {
         {
             return;
         }
-
+        event.setCancelled(true);
         if(event.getSlot()==12)
         {
 
