@@ -1,5 +1,7 @@
 package me.mrxbox98.UltimateCrates.guis;
 
+import me.mrxbox98.UltimateCrates.CrateConfig;
+import me.mrxbox98.UltimateCrates.crates.Crate;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -18,9 +20,13 @@ public class CrateCreateGui implements Listener {
 
     private Player player;
 
-    public CrateCreateGui(Player player)
+    private String name;
+
+    public CrateCreateGui(Player player, String name)
     {
         this.player = player;
+
+        this.name=name;
 
         inventory=Bukkit.createInventory(null, 27, "Create Confirmation");
 
@@ -47,6 +53,10 @@ public class CrateCreateGui implements Listener {
         player.openInventory(inventory);
     }
 
+    /**
+     * Called when someone clicks on inventory
+     * @param event the event
+     */
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event)
     {
@@ -57,15 +67,21 @@ public class CrateCreateGui implements Listener {
         event.setCancelled(true);
         if(event.getSlot()==12)
         {
-
+            player.sendMessage(CrateConfig.crateCreateConfirm);
+            Crate.crates.add(new Crate(name));
         }
         if(event.getSlot()==14)
         {
-
+            player.sendMessage(CrateConfig.createCreateCancel);
+            player.closeInventory();
         }
 
     }
 
+    /**
+     * Called when inventory is closed
+     * @param event the inventory close event
+     */
     @EventHandler
     public void onInventoryClose(InventoryCloseEvent event)
     {

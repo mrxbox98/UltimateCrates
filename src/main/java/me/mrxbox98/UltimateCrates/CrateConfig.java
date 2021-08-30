@@ -8,6 +8,10 @@ public class CrateConfig {
 
     public static String helpMessage="/crate create <name> - Create a new crate";
 
+    public static String crateCreateConfirm="You have created a new crate!";
+
+    public static String createCreateCancel="You have canceled creating a crate!";
+
     public static void setup()
     {
         FileConfiguration config = UltimateCrates.instance.getConfig();
