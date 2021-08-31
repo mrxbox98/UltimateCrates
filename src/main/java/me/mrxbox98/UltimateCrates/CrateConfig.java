@@ -12,6 +12,8 @@ public class CrateConfig {
 
     public static String createCreateCancel="You have canceled creating a crate!";
 
+    public static String editBadChance="You chance cannot be below 0.1 and cannot be higher than 100!";
+
     public static void setup()
     {
         FileConfiguration config = UltimateCrates.instance.getConfig();

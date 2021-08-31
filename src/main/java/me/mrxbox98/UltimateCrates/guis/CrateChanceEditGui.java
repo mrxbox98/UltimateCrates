@@ -1,5 +1,6 @@
 package me.mrxbox98.UltimateCrates.guis;
 
+import me.mrxbox98.UltimateCrates.CrateConfig;
 import me.mrxbox98.UltimateCrates.crates.Crate;
 import me.mrxbox98.UltimateCrates.crates.CrateReward;
 import org.bukkit.Bukkit;
@@ -103,7 +104,40 @@ public class CrateChanceEditGui implements Listener {
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event)
     {
+        switch(event.getSlot())
+        {
+            case 1:
+                changeCrateRewardChance(10);
+                break;
+            case 2:
+                changeCrateRewardChance(1);
+                break;
+            case 3:
+                changeCrateRewardChance(0.1d);
+                break;
+            case 5:
+                changeCrateRewardChance(-10);
+                break;
+            case 6:
+                changeCrateRewardChance(-1);
+                break;
+            case 7:
+                changeCrateRewardChance(-0.1);
+                break;
 
+        }
+    }
+
+    public void changeCrateRewardChance(double chance)
+    {
+        if(crateReward.getChance()+chance<0.1 || crateReward.getChance()+chance>100)
+        {
+            player.sendMessage(CrateConfig.editBadChance);
+        }
+        else
+        {
+            crateReward.setChance(crateReward.getChance()+chance);
+        }
     }
 
 }
