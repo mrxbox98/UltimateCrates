@@ -3,4 +3,7 @@ version: 0.0.1
 main: me.mrxbox98.UltimateCrates.UltimateCrates
 commands:
   crate:
+    permission: UltimateCrates.admin
+permissions:
+  admin:
     default: op
