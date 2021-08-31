@@ -58,6 +58,7 @@ public class CrateCommand implements CommandExecutor {
                     return true;
                 }
             }
+            player.sendMessage(CrateConfig.crateNotFoundError);
             return true;
         }
         if(args[0].equals("give"))
@@ -67,10 +68,10 @@ public class CrateCommand implements CommandExecutor {
                 if(crate.name.equals(args[2]))
                 {
                     UltimateCrates.instance.getServer().getPlayer(args[1]).getInventory().addItem(new CrateItem(crate));
+                    return true;
                 }
             }
-
-
+            player.sendMessage(CrateConfig.crateNotFoundError);
             return true;
         }
 

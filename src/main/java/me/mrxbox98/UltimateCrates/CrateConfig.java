@@ -16,6 +16,8 @@ public class CrateConfig {
 
     public static String crateCreateNameError="You must specify a name";
 
+    public static String crateNotFoundError="A crate with this name could not be found!";
+
     public static void setup()
     {
         FileConfiguration config = UltimateCrates.instance.getConfig();
