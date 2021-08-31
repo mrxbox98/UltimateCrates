@@ -47,7 +47,7 @@ public class CrateChanceEditGui implements Listener {
 
         chance10.setItemMeta(chance10Meta);
 
-        inventory.addItem(chance10);
+        inventory.setItem(1,chance10);
 
         ItemStack chance1 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte)5);
 
@@ -57,7 +57,7 @@ public class CrateChanceEditGui implements Listener {
 
         chance10.setItemMeta(chance1Meta);
 
-        inventory.addItem(chance1);
+        inventory.setItem(2,chance1);
 
         ItemStack chance01 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte)5);
 
@@ -67,7 +67,7 @@ public class CrateChanceEditGui implements Listener {
 
         chance10.setItemMeta(chance01Meta);
 
-        inventory.addItem(chance01);
+        inventory.setItem(3,chance01);
 
         ItemStack minusChance10 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte)5);
 
@@ -77,7 +77,7 @@ public class CrateChanceEditGui implements Listener {
 
         minusChance10.setItemMeta(minusChance10Meta);
 
-        inventory.addItem(minusChance10);
+        inventory.setItem(5,minusChance10);
 
         ItemStack minusChance1 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte)5);
 
@@ -87,7 +87,7 @@ public class CrateChanceEditGui implements Listener {
 
         minusChance10.setItemMeta(minusChance1Meta);
 
-        inventory.addItem(minusChance1);
+        inventory.setItem(6,minusChance1);
 
         ItemStack minusChance01 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte)5);
 
@@ -97,13 +97,13 @@ public class CrateChanceEditGui implements Listener {
 
         minusChance10.setItemMeta(minusChance01Meta);
 
-        inventory.addItem(minusChance01);
+        inventory.setItem(7,minusChance01);
     }
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event)
     {
-        
+
     }
 
 }
