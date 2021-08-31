@@ -67,6 +67,36 @@ public class CrateChanceEditGui implements Listener {
 
         inventory.addItem(chance01);
 
+        ItemStack minusChance10 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte)5);
+
+        ItemMeta minusChance10Meta = minusChance10.getItemMeta();
+
+        minusChance10Meta.setDisplayName("Add 10% chance");
+
+        minusChance10.setItemMeta(minusChance10Meta);
+
+        inventory.addItem(minusChance10);
+
+        ItemStack minusChance1 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte)5);
+
+        ItemMeta minusChance1Meta = minusChance1.getItemMeta();
+
+        minusChance10Meta.setDisplayName("Add 1% chance");
+
+        minusChance10.setItemMeta(minusChance1Meta);
+
+        inventory.addItem(minusChance1);
+
+        ItemStack minusChance01 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte)5);
+
+        ItemMeta minusChance01Meta = minusChance01.getItemMeta();
+
+        minusChance10Meta.setDisplayName("Add 0.1% chance");
+
+        minusChance10.setItemMeta(minusChance01Meta);
+
+        inventory.addItem(minusChance01);
+
 
     }
 
