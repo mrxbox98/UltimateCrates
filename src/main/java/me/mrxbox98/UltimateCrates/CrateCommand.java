@@ -1,9 +1,11 @@
 package me.mrxbox98.UltimateCrates;
 
+import me.mrxbox98.UltimateCrates.guis.CrateCreateGui;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
+import org.bukkit.entity.Player;
 
 public class CrateCommand implements CommandExecutor {
 
@@ -25,13 +27,25 @@ public class CrateCommand implements CommandExecutor {
             return true;
         }
 
+        Player player = (Player) sender;
+
         if(args.length==1)
         {
             sender.sendMessage(CrateConfig.helpMessage);
             return true;
         }
 
-
+        if(args[0].equals("create"))
+        {
+            if(args.length==1)
+            {
+                player.sendMessage(CrateConfig.crateCreateNameError);
+            }
+            else
+            {
+                UltimateCrates.instance.getServer().getPluginManager().registerEvents(new CrateCreateGui(player, args[1]), UltimateCrates.instance);
+            }
+        }
 
 
 

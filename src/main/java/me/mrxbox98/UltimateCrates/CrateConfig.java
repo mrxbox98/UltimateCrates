@@ -14,6 +14,8 @@ public class CrateConfig {
 
     public static String editBadChance="You chance cannot be below 0.1 and cannot be higher than 100!";
 
+    public static String crateCreateNameError="You must specify a name";
+
     public static void setup()
     {
         FileConfiguration config = UltimateCrates.instance.getConfig();

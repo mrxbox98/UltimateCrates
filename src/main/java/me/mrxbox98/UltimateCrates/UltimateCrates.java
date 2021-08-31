@@ -1,5 +1,6 @@
 package me.mrxbox98.UltimateCrates;
 
+import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class UltimateCrates extends JavaPlugin {
@@ -15,6 +16,10 @@ public class UltimateCrates extends JavaPlugin {
     {
         instance=this;
         setupMcVersion();
+        getCommand("crate").setExecutor(new CrateCommand());
+
+        int pluginId = 12659;
+        Metrics metrics = new Metrics(this, pluginId);
     }
 
     @Override
