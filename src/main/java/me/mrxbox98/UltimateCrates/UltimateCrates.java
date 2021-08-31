@@ -19,6 +19,8 @@ public class UltimateCrates extends JavaPlugin {
 
         int pluginId = 12659;
         new Metrics(this, pluginId);
+
+        CrateConfig.setup();
     }
 
     @Override
