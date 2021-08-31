@@ -5,7 +5,9 @@ import me.mrxbox98.UltimateCrates.crates.CrateReward;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -96,8 +98,12 @@ public class CrateChanceEditGui implements Listener {
         minusChance10.setItemMeta(minusChance01Meta);
 
         inventory.addItem(minusChance01);
+    }
 
-
+    @EventHandler
+    public void onInventoryClick(InventoryClickEvent event)
+    {
+        
     }
 
 }
