@@ -19,7 +19,7 @@ public class UltimateCrates extends JavaPlugin {
         getCommand("crate").setExecutor(new CrateCommand());
 
         int pluginId = 12659;
-        Metrics metrics = new Metrics(this, pluginId);
+        new Metrics(this, pluginId);
     }
 
     @Override
