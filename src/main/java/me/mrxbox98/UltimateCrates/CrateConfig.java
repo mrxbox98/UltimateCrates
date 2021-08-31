@@ -43,7 +43,7 @@ public class CrateConfig {
                     e.printStackTrace();
                 }
             }
-            
+
             if(field.getClass().equals(boolean.class))
             {
                 String name = field.getName().substring(0,1).toUpperCase()+field.getName().substring(1);

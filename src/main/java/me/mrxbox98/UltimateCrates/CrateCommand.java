@@ -1,6 +1,9 @@
 package me.mrxbox98.UltimateCrates;
 
+import me.mrxbox98.UltimateCrates.crates.Crate;
+import me.mrxbox98.UltimateCrates.crates.CrateItem;
 import me.mrxbox98.UltimateCrates.guis.CrateCreateGui;
+import me.mrxbox98.UltimateCrates.guis.CrateEditGui;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -45,6 +48,30 @@ public class CrateCommand implements CommandExecutor {
             {
                 UltimateCrates.instance.getServer().getPluginManager().registerEvents(new CrateCreateGui(player, args[1]), UltimateCrates.instance);
             }
+            return true;
+        }
+        if(args[0].equals("edit"))
+        {
+            for(Crate crate: Crate.crates) {
+                if (crate.equals(args[1])) {
+                    UltimateCrates.instance.getServer().getPluginManager().registerEvents(new CrateEditGui(crate, player), UltimateCrates.instance);
+                    return true;
+                }
+            }
+            return true;
+        }
+        if(args[0].equals("give"))
+        {
+            for(Crate crate: Crate.crates)
+            {
+                if(crate.name.equals(args[2]))
+                {
+                    UltimateCrates.instance.getServer().getPlayer(args[1]).getInventory().addItem(new CrateItem(crate));
+                }
+            }
+
+
+            return true;
         }
 
 
