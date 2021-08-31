@@ -43,6 +43,26 @@ public class CrateConfig {
                     e.printStackTrace();
                 }
             }
+            
+            if(field.getClass().equals(boolean.class))
+            {
+                String name = field.getName().substring(0,1).toUpperCase()+field.getName().substring(1);
+
+                if(!config.contains(name))
+                {
+                    try {
+                        config.addDefault(name, field.getBoolean(null));
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                try {
+                    field.set(null, config.getBoolean(name));
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
         config.options().copyDefaults(true);
