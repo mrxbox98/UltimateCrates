@@ -128,6 +128,10 @@ public class CrateChanceEditGui implements Listener {
         }
     }
 
+    /**
+     * Changes the chance of a reward
+     * @param chance the chance to change
+     */
     public void changeCrateRewardChance(double chance)
     {
         if(crateReward.getChance()+chance<0.1 || crateReward.getChance()+chance>100)
