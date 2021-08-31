@@ -18,6 +18,8 @@ public class CrateConfig {
 
     public static String crateNotFoundError="A crate with this name could not be found!";
 
+    public static String commandNotFound="This command was not found! Use /crate help to see a list of commands.";
+
     public static void setup()
     {
         FileConfiguration config = UltimateCrates.instance.getConfig();

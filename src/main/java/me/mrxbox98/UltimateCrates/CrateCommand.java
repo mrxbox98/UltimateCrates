@@ -75,6 +75,7 @@ public class CrateCommand implements CommandExecutor {
             return true;
         }
 
+        player.sendMessage(CrateConfig.commandNotFound);
 
 
         return true;
