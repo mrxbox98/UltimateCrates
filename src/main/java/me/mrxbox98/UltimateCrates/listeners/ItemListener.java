@@ -1,4 +1,6 @@
 package me.mrxbox98.UltimateCrates.listeners;
 
-public class ItemListener {
+import org.bukkit.event.Listener;
+
+public class ItemListener implements Listener {
 }
