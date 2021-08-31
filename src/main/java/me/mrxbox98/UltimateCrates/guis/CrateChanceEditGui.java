@@ -1,14 +1,17 @@
 package me.mrxbox98.UltimateCrates.guis;
 
 import me.mrxbox98.UltimateCrates.CrateConfig;
+import me.mrxbox98.UltimateCrates.UltimateCrates;
 import me.mrxbox98.UltimateCrates.crates.Crate;
 import me.mrxbox98.UltimateCrates.crates.CrateReward;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -141,6 +144,16 @@ public class CrateChanceEditGui implements Listener {
         else
         {
             crateReward.setChance(crateReward.getChance()+chance);
+        }
+    }
+
+    @EventHandler
+    public void onInventoryClose(InventoryCloseEvent event)
+    {
+        if(inventory.equals(event.getInventory()))
+        {
+            HandlerList.unregisterAll(this);
+            UltimateCrates.instance.getServer().getPluginManager().registerEvents(new CrateEditGui(crate, player), UltimateCrates.instance);
         }
     }
 
