@@ -1,6 +1,5 @@
 package me.mrxbox98.UltimateCrates;
 
-import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class UltimateCrates extends JavaPlugin {
