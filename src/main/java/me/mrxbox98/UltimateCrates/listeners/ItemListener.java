@@ -1,5 +1,6 @@
 package me.mrxbox98.UltimateCrates.listeners;
 
+import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
@@ -16,6 +17,11 @@ public class ItemListener implements Listener {
         }
 
         if(event.getAction().equals(Action.LEFT_CLICK_AIR) || event.getAction().equals(Action.LEFT_CLICK_BLOCK))
+        {
+            return;
+        }
+
+        if(!event.getItem().getType().equals(Material.ENDER_CHEST))
         {
             return;
         }
