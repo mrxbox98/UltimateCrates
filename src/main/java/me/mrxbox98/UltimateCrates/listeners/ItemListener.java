@@ -1,5 +1,6 @@
 package me.mrxbox98.UltimateCrates.listeners;
 
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -25,6 +26,10 @@ public class ItemListener implements Listener {
         {
             return;
         }
+
+        String str = event.getItem().getItemMeta().getLore().get(0).replace(" "+ ChatColor.COLOR_CHAR,"");
+
+        int id = Integer.parseInt(str);
     }
 
 }
