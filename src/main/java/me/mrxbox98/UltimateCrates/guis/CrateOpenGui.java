@@ -9,6 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryDragEvent;
 import org.bukkit.inventory.Inventory;
@@ -72,6 +73,15 @@ public class CrateOpenGui implements Listener {
 
     @EventHandler
     public void onDragClick(InventoryDragEvent event)
+    {
+        if(event.getInventory().equals(inventory))
+        {
+            event.setCancelled(true);
+        }
+    }
+
+    @EventHandler
+    public void onInventoryClick(InventoryClickEvent event)
     {
         if(event.getInventory().equals(inventory))
         {
