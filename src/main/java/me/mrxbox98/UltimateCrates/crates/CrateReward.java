@@ -4,6 +4,8 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.util.List;
+
 public class CrateReward {
 
     double chance;
@@ -12,13 +14,16 @@ public class CrateReward {
 
     Material type;
 
-    ItemMeta meta;
+    String displayName;
+
+    List<String> lore;
 
     public CrateReward(ItemStack itemStack)
     {
         amount=itemStack.getAmount();
         type=itemStack.getType();
-        meta=itemStack.getItemMeta();
+        displayName=itemStack.getItemMeta().getDisplayName();
+        lore=itemStack.getItemMeta().getLore();
     }
 
 
@@ -34,7 +39,11 @@ public class CrateReward {
     public ItemStack getItemStack() {
         ItemStack itemStack = new ItemStack(type, amount);
 
-        itemStack.setItemMeta(meta);
+        ItemMeta itemMeta = itemStack.getItemMeta();
+
+        itemMeta.setDisplayName(displayName);
+
+        itemMeta.setLore(lore);
 
         return itemStack;
     }
