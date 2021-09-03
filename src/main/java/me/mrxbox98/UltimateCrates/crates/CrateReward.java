@@ -1,23 +1,27 @@
 package me.mrxbox98.UltimateCrates.crates;
 
+import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public class CrateReward {
 
     double chance;
 
-    ItemStack itemStack;
+    int amount;
+
+    Material type;
+
+    ItemMeta meta;
 
     public CrateReward(ItemStack itemStack)
     {
-        this.itemStack=itemStack;
+        amount=itemStack.getAmount();
+        type=itemStack.getType();
+        meta=itemStack.getItemMeta();
     }
 
-    public CrateReward(ItemStack itemStack, double chance)
-    {
-        this.itemStack=itemStack;
-        this.chance=chance;
-    }
+
 
     public double getChance() {
         return chance;
@@ -28,10 +32,10 @@ public class CrateReward {
     }
 
     public ItemStack getItemStack() {
-        return itemStack;
-    }
+        ItemStack itemStack = new ItemStack(type, amount);
 
-    public void setItemStack(ItemStack itemStack) {
-        this.itemStack = itemStack;
+        itemStack.setItemMeta(meta);
+
+        return itemStack;
     }
 }
