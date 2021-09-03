@@ -4,6 +4,7 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CrateItem extends ItemStack {
@@ -18,7 +19,16 @@ public class CrateItem extends ItemStack {
 
         id=id.replace(""," §");
 
-        List<String> lore = meta.getLore();
+        List<String> lore;
+
+        if(meta.getLore()==null)
+        {
+            lore= new ArrayList<>();
+        }
+        else
+        {
+            lore=meta.getLore();
+        }
 
         lore.add(id);
 
