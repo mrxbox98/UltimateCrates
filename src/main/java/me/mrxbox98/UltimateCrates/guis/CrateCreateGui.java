@@ -94,6 +94,7 @@ public class CrateCreateGui implements Listener {
         {
             player.sendMessage(CrateConfig.crateCreateConfirm);
             Crate.crates.add(new Crate(name));
+            player.closeInventory();
         }
         if(event.getSlot()==14)
         {
