@@ -68,7 +68,7 @@ public class CrateEditGui implements Listener {
                 }
             });
         }
-        if(event.isLeftClick())
+        else if(event.isLeftClick())
         {
             CrateReward crateReward = new CrateReward(event.getCurrentItem());
             crate.rewards.add(crateReward);
