@@ -43,7 +43,7 @@ public class CrateChanceEditGui implements Listener {
     {
         inventory.clear();
 
-        ItemStack chance10 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte)5);
+        ItemStack chance10 = new ItemStack(Material.getMaterial("STAINED_GLASS_PANE"), 1, (byte)5);
 
         ItemMeta chance10Meta = chance10.getItemMeta();
 
@@ -53,7 +53,7 @@ public class CrateChanceEditGui implements Listener {
 
         inventory.setItem(1,chance10);
 
-        ItemStack chance1 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte)5);
+        ItemStack chance1 = new ItemStack(Material.getMaterial("STAINED_GLASS_PANE"), 1, (byte)5);
 
         ItemMeta chance1Meta = chance1.getItemMeta();
 
@@ -63,7 +63,7 @@ public class CrateChanceEditGui implements Listener {
 
         inventory.setItem(2,chance1);
 
-        ItemStack chance01 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte)5);
+        ItemStack chance01 = new ItemStack(Material.getMaterial("STAINED_GLASS_PANE"), 1, (byte)5);
 
         ItemMeta chance01Meta = chance01.getItemMeta();
 
@@ -73,7 +73,7 @@ public class CrateChanceEditGui implements Listener {
 
         inventory.setItem(3,chance01);
 
-        ItemStack minusChance10 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte)5);
+        ItemStack minusChance10 = new ItemStack(Material.getMaterial("STAINED_GLASS_PANE"), 1, (byte)5);
 
         ItemMeta minusChance10Meta = minusChance10.getItemMeta();
 
@@ -83,7 +83,7 @@ public class CrateChanceEditGui implements Listener {
 
         inventory.setItem(5,minusChance10);
 
-        ItemStack minusChance1 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte)5);
+        ItemStack minusChance1 = new ItemStack(Material.getMaterial("STAINED_GLASS_PANE"), 1, (byte)5);
 
         ItemMeta minusChance1Meta = minusChance1.getItemMeta();
 
@@ -93,7 +93,7 @@ public class CrateChanceEditGui implements Listener {
 
         inventory.setItem(6,minusChance1);
 
-        ItemStack minusChance01 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte)5);
+        ItemStack minusChance01 = new ItemStack(Material.getMaterial("STAINED_GLASS_PANE"), 1, (byte)5);
 
         ItemMeta minusChance01Meta = minusChance01.getItemMeta();
 

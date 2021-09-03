@@ -59,7 +59,7 @@ public class CrateOpenGui implements Listener {
 
     public ItemStack generateRandomGlass()
     {
-        ItemStack itemStack = new ItemStack(Material.STAINED_GLASS_PANE,1,(byte)new Random().nextInt(14));
+        ItemStack itemStack = new ItemStack(Material.getMaterial("STAINED_GLASS_PANE"),1,(byte)new Random().nextInt(14));
 
         itemStack.getItemMeta().setDisplayName(ChatColor.DARK_PURPLE+"...");
 

@@ -1,6 +1,7 @@
 package me.mrxbox98.UltimateCrates.guis;
 
 import me.mrxbox98.UltimateCrates.CrateConfig;
+import me.mrxbox98.UltimateCrates.UltimateCrates;
 import me.mrxbox98.UltimateCrates.crates.Crate;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -22,6 +23,11 @@ public class CrateCreateGui implements Listener {
 
     private String name;
 
+    /**
+     * Creates a confirmation GUI
+     * @param player the player that executed the command
+     * @param name the name of the crate being created
+     */
     public CrateCreateGui(Player player, String name)
     {
         this.player = player;
@@ -30,7 +36,16 @@ public class CrateCreateGui implements Listener {
 
         inventory=Bukkit.createInventory(null, 27, "Create Confirmation");
 
-        ItemStack confirm = new ItemStack(Material.WOOL, 1, (byte)5);
+        ItemStack confirm;
+
+        if("1.8 1.9 1.10 1.11 1.12".contains(UltimateCrates.mcVersion))
+        {
+            confirm = new ItemStack(Material.getMaterial("WOOL"), 1, (byte)5);
+        }
+        else
+        {
+            confirm = new ItemStack(Material.getMaterial("LIME_WOOL"), 1);
+        }
 
         ItemMeta confirmMeta = confirm.getItemMeta();
 
@@ -38,7 +53,16 @@ public class CrateCreateGui implements Listener {
 
         confirm.setItemMeta(confirmMeta);
 
-        ItemStack cancel = new ItemStack(Material.WOOL, 1, (byte)14);
+        ItemStack cancel;
+
+        if("1.8 1.9 1.10 1.11 1.12".contains(UltimateCrates.mcVersion))
+        {
+            cancel = new ItemStack(Material.getMaterial("WOOL"), 1, (byte)14);
+        }
+        else
+        {
+            cancel = new ItemStack(Material.getMaterial("RED_WOOL"), 1);
+        }
 
         ItemMeta cancelMeta = confirm.getItemMeta();
 
