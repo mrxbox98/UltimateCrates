@@ -31,6 +31,8 @@ public class CrateOpenGui implements Listener {
 
         inventory= Bukkit.createInventory(null,45,"Opening a crate!");
 
+        player.openInventory(inventory);
+
         animate();
     }
 
