@@ -40,7 +40,10 @@ public class CrateOpenGui implements Listener {
     public void animate()
     {
         ItemStack reward = crate.roll().getItemStack();
-        player.getInventory().addItem(reward);
+        if(reward!=null)
+        {
+            player.getInventory().addItem(reward);
+        }
         for(int i=0;i<22;i++)
         {
             int finalI = i;
@@ -50,7 +53,12 @@ public class CrateOpenGui implements Listener {
             },i*4);
         }
 
-        Bukkit.getScheduler().runTaskLater(UltimateCrates.instance, () -> inventory.setItem(22,reward),22*4);
+        if(reward!=null)
+        {
+            Bukkit.getScheduler().runTaskLater(UltimateCrates.instance, () -> inventory.setItem(22,reward),22*4);
+        }
+
+
     }
 
     public ItemStack generateRandomGlass()
