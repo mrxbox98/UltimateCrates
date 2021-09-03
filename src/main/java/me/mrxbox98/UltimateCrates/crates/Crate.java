@@ -66,6 +66,8 @@ public class Crate {
             FileWriter fileWriter = new FileWriter(file);
 
             fileWriter.write(toGson());
+
+            fileWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

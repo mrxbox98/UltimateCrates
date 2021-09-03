@@ -53,7 +53,7 @@ public class CrateCommand implements CommandExecutor {
         if(args[0].equals("edit"))
         {
             for(Crate crate: Crate.crates) {
-                if (crate.equals(args[1])) {
+                if (crate.name.equals(args[1])) {
                     UltimateCrates.instance.getServer().getPluginManager().registerEvents(new CrateEditGui(crate, player), UltimateCrates.instance);
                     return true;
                 }
