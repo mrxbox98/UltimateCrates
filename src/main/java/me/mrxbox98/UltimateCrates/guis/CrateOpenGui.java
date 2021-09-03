@@ -45,7 +45,7 @@ public class CrateOpenGui implements Listener {
             int finalI = i;
             Bukkit.getScheduler().runTaskLater(UltimateCrates.instance, () -> {
                 inventory.setItem(finalI,generateRandomGlass());
-                inventory.setItem(45 - finalI,generateRandomGlass());
+                inventory.setItem(44 - finalI,generateRandomGlass());
             },i*4);
         }
 

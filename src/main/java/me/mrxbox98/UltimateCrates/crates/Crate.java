@@ -23,7 +23,7 @@ public class Crate {
 
     public Crate(String name)
     {
-        this.id = new Random().nextInt();
+        this.id = Math.abs(new Random().nextInt());
         this.name=name;
         crates.add(this);
 
