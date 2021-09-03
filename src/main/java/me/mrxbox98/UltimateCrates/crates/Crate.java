@@ -1,9 +1,12 @@
 package me.mrxbox98.UltimateCrates.crates;
 
 import com.google.gson.Gson;
+import me.mrxbox98.UltimateCrates.UltimateCrates;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -23,6 +26,8 @@ public class Crate {
         this.id = new Random().nextInt();
         this.name=name;
         crates.add(this);
+
+        save();
     }
 
     public CrateReward roll()
@@ -45,6 +50,27 @@ public class Crate {
         Gson gson = new Gson();
 
         return gson.toJson(this);
+    }
+
+    public void save()
+    {
+        File folder = new File(UltimateCrates.instance.getDataFolder()+"/crates/");
+
+        folder.mkdir();
+
+        try {
+            File file = new File(UltimateCrates.instance.getDataFolder()+"/crates/"+ id+".json");
+
+            file.createNewFile();
+
+            FileWriter fileWriter = new FileWriter(file);
+
+            fileWriter.write(toGson());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     public static Crate fromJson(File file)

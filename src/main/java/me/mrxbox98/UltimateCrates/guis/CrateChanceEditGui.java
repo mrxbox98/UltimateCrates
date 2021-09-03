@@ -145,6 +145,8 @@ public class CrateChanceEditGui implements Listener {
         {
             crateReward.setChance(crateReward.getChance()+chance);
         }
+
+        crate.save();
     }
 
     @EventHandler

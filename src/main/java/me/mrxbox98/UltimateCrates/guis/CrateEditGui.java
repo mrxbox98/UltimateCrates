@@ -47,6 +47,7 @@ public class CrateEditGui implements Listener {
         {
             crate.rewards.remove(event.getSlot());
             updateInventory();
+            crate.save();
         }
         if(event.isLeftClick())
         {
