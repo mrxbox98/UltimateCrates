@@ -2,6 +2,7 @@ package me.mrxbox98.UltimateCrates.guis;
 
 import me.mrxbox98.UltimateCrates.UltimateCrates;
 import me.mrxbox98.UltimateCrates.crates.Crate;
+import me.mrxbox98.UltimateCrates.crates.CrateReward;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -49,7 +50,7 @@ public class CrateEditGui implements Listener {
             updateInventory();
             crate.save();
         }
-        if(event.isLeftClick())
+        if(event.isShiftClick())
         {
             Bukkit.getScheduler().runTask(UltimateCrates.instance, new Runnable() {
                 @Override
@@ -58,6 +59,12 @@ public class CrateEditGui implements Listener {
                     UltimateCrates.instance.getServer().getPluginManager().registerEvents(new CrateChanceEditGui(player, crate, crate.rewards.get(event.getSlot())), UltimateCrates.instance);
                 }
             });
+        }
+        if(event.isLeftClick())
+        {
+            CrateReward crateReward = new CrateReward(event.getCurrentItem());
+            crate.rewards.add(crateReward);
+            updateInventory();
         }
     }
 
