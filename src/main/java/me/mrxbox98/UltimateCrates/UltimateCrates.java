@@ -1,5 +1,6 @@
 package me.mrxbox98.UltimateCrates;
 
+import me.mrxbox98.UltimateCrates.listeners.ItemListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class UltimateCrates extends JavaPlugin {
@@ -21,6 +22,8 @@ public class UltimateCrates extends JavaPlugin {
         new Metrics(this, pluginId);
 
         CrateConfig.setup();
+
+        getServer().getPluginManager().registerEvents(new ItemListener(),this);
     }
 
     @Override

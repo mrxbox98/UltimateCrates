@@ -30,9 +30,23 @@ public class ItemListener implements Listener {
             return;
         }
 
-        String str = event.getItem().getItemMeta().getLore().get(0).replace(" "+ ChatColor.COLOR_CHAR,"");
+        if(event.getItem().getItemMeta().getLore()==null)
+        {
+            return;
+        }
 
-        int id = Integer.parseInt(str);
+        String str = event.getItem().getItemMeta().getLore().get(event.getItem().getItemMeta().getLore().size()-1).replace(" "+ ChatColor.COLOR_CHAR,"");
+
+        int id;
+
+        try
+        {
+            id = Integer.parseInt(str);
+        }
+        catch (NumberFormatException e)
+        {
+            return;
+        }
 
         for(Crate crate: Crate.crates)
         {
