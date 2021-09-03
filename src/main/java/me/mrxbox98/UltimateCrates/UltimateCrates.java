@@ -1,7 +1,10 @@
 package me.mrxbox98.UltimateCrates;
 
+import me.mrxbox98.UltimateCrates.crates.Crate;
 import me.mrxbox98.UltimateCrates.listeners.ItemListener;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.io.File;
 
 public class UltimateCrates extends JavaPlugin {
 
@@ -30,6 +33,18 @@ public class UltimateCrates extends JavaPlugin {
     public void onDisable()
     {
 
+    }
+
+    public void loadCrates()
+    {
+        File folder = new File(getDataFolder()+"/crates/");
+
+        folder.mkdir();
+
+        for(File file: folder.listFiles())
+        {
+            Crate.crates.add(Crate.fromJson(file));
+        }
     }
 
     public void setupMcVersion()
