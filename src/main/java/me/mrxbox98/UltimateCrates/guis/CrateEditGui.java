@@ -50,7 +50,7 @@ public class CrateEditGui implements Listener {
         {
             return;
         }
-        
+
         event.setCancelled(true);
         if(event.isRightClick())
         {

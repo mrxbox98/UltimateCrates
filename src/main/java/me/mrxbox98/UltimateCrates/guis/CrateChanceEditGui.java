@@ -60,9 +60,9 @@ public class CrateChanceEditGui implements Listener {
 
         ItemMeta chance1Meta = chance1.getItemMeta();
 
-        chance10Meta.setDisplayName("Add 1% chance");
+        chance1Meta.setDisplayName("Add 1% chance");
 
-        chance10.setItemMeta(chance1Meta);
+        chance1.setItemMeta(chance1Meta);
 
         inventory.setItem(2,chance1);
 
@@ -70,9 +70,9 @@ public class CrateChanceEditGui implements Listener {
 
         ItemMeta chance01Meta = chance01.getItemMeta();
 
-        chance10Meta.setDisplayName("Add 0.1% chance");
+        chance01Meta.setDisplayName("Add 0.1% chance");
 
-        chance10.setItemMeta(chance01Meta);
+        chance01.setItemMeta(chance01Meta);
 
         inventory.setItem(3,chance01);
 
@@ -90,9 +90,9 @@ public class CrateChanceEditGui implements Listener {
 
         ItemMeta minusChance1Meta = minusChance1.getItemMeta();
 
-        minusChance10Meta.setDisplayName("Add 1% chance");
+        minusChance1Meta.setDisplayName("Add 1% chance");
 
-        minusChance10.setItemMeta(minusChance1Meta);
+        minusChance1.setItemMeta(minusChance1Meta);
 
         inventory.setItem(6,minusChance1);
 
@@ -100,9 +100,9 @@ public class CrateChanceEditGui implements Listener {
 
         ItemMeta minusChance01Meta = minusChance01.getItemMeta();
 
-        minusChance10Meta.setDisplayName("Add 0.1% chance");
+        minusChance01Meta.setDisplayName("Add 0.1% chance");
 
-        minusChance10.setItemMeta(minusChance01Meta);
+        minusChance01.setItemMeta(minusChance01Meta);
 
         inventory.setItem(7,minusChance01);
     }
@@ -110,6 +110,13 @@ public class CrateChanceEditGui implements Listener {
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event)
     {
+        if(!event.getInventory().equals(inventory))
+        {
+            return;
+        }
+
+        event.setCancelled(true);
+
         switch(event.getSlot())
         {
             case 1:
