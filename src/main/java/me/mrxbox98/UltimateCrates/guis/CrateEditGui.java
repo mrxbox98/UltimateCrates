@@ -4,12 +4,14 @@ import me.mrxbox98.UltimateCrates.UltimateCrates;
 import me.mrxbox98.UltimateCrates.crates.Crate;
 import me.mrxbox98.UltimateCrates.crates.CrateReward;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
+import org.bukkit.event.inventory.InventoryDragEvent;
 import org.bukkit.inventory.Inventory;
 
 public class CrateEditGui implements Listener {
@@ -43,6 +45,12 @@ public class CrateEditGui implements Listener {
         {
             return;
         }
+
+        if(event.getCurrentItem()==null || event.getCurrentItem().getType().equals(Material.AIR))
+        {
+            return;
+        }
+        
         event.setCancelled(true);
         if(event.isRightClick())
         {
@@ -84,6 +92,15 @@ public class CrateEditGui implements Listener {
         if(event.getInventory().equals(inventory))
         {
             HandlerList.unregisterAll(this);
+        }
+    }
+
+    @EventHandler
+    public void onDragClick(InventoryDragEvent event)
+    {
+        if(event.getInventory().equals(inventory))
+        {
+            event.setCancelled(true);
         }
     }
 
