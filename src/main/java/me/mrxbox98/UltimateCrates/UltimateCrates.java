@@ -12,7 +12,7 @@ public class UltimateCrates extends JavaPlugin {
 
     public static String mcVersion;
 
-    public static String version="0.0.1";
+    public static String version="1.0.0";
 
     @Override
     public void onEnable()
@@ -27,6 +27,8 @@ public class UltimateCrates extends JavaPlugin {
         CrateConfig.setup();
 
         getServer().getPluginManager().registerEvents(new ItemListener(),this);
+
+        loadCrates();
     }
 
     @Override
