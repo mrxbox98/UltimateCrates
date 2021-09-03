@@ -65,6 +65,7 @@ public class CrateEditGui implements Listener {
             CrateReward crateReward = new CrateReward(event.getCurrentItem());
             crate.rewards.add(crateReward);
             updateInventory();
+            crate.save();
         }
     }
 

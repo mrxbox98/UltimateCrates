@@ -36,6 +36,8 @@ public class CrateChanceEditGui implements Listener {
 
         loadChances();
 
+        player.openInventory(inventory);
+
     }
 
 
