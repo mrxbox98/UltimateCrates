@@ -40,6 +40,12 @@ public class CrateCommand implements CommandExecutor {
 
         if(args[0].equals("create"))
         {
+            if(!player.hasPermission("admin"))
+            {
+                player.sendMessage("You lack the permission to send this command!");
+                return true;
+            }
+
             if(args.length==1)
             {
                 player.sendMessage(CrateConfig.crateCreateNameError);
@@ -52,6 +58,12 @@ public class CrateCommand implements CommandExecutor {
         }
         if(args[0].equals("edit"))
         {
+            if(!player.hasPermission("admin"))
+            {
+                player.sendMessage("You lack the permission to send this command!");
+                return true;
+            }
+
             for(Crate crate: Crate.crates) {
                 if (crate.name.equals(args[1])) {
                     UltimateCrates.instance.getServer().getPluginManager().registerEvents(new CrateEditGui(crate, player), UltimateCrates.instance);
@@ -63,6 +75,12 @@ public class CrateCommand implements CommandExecutor {
         }
         if(args[0].equals("give"))
         {
+            if(!player.hasPermission("admin"))
+            {
+                player.sendMessage("You lack the permission to send this command!");
+                return true;
+            }
+
             for(Crate crate: Crate.crates)
             {
                 if(crate.name.equals(args[2]))
