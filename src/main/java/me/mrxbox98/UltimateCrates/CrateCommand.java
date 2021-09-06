@@ -42,7 +42,7 @@ public class CrateCommand implements CommandExecutor {
         {
             if(!player.hasPermission("admin"))
             {
-                player.sendMessage("You lack the permission to send this command!");
+                player.sendMessage(CrateConfig.noPermission);
                 return true;
             }
 
@@ -60,7 +60,7 @@ public class CrateCommand implements CommandExecutor {
         {
             if(!player.hasPermission("admin"))
             {
-                player.sendMessage("You lack the permission to send this command!");
+                player.sendMessage(CrateConfig.noPermission);
                 return true;
             }
 
@@ -77,7 +77,7 @@ public class CrateCommand implements CommandExecutor {
         {
             if(!player.hasPermission("admin"))
             {
-                player.sendMessage("You lack the permission to send this command!");
+                player.sendMessage(CrateConfig.noPermission);
                 return true;
             }
 

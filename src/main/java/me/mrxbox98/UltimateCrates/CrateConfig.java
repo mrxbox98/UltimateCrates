@@ -20,6 +20,8 @@ public class CrateConfig {
 
     public static String commandNotFound="This command was not found! Use /crate help to see a list of commands.";
 
+    public static String noPermission="You lack the permission to send this command!";
+
     public static void setup()
     {
         FileConfiguration config = UltimateCrates.instance.getConfig();
