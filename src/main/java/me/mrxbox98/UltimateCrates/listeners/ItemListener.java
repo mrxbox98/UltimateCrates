@@ -13,6 +13,10 @@ import org.bukkit.event.player.PlayerInteractEvent;
 
 public class ItemListener implements Listener {
 
+    /**
+     * Opens the crate
+     * @param event the click event
+     */
     @EventHandler
     public void onRightClick(PlayerInteractEvent event)
     {
@@ -60,6 +64,10 @@ public class ItemListener implements Listener {
         }
     }
 
+    /**
+     * Cancels any monthly crate from being placed
+     * @param event the block place event
+     */
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent event)
     {

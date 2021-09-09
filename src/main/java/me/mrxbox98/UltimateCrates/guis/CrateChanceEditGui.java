@@ -4,6 +4,7 @@ import me.mrxbox98.UltimateCrates.CrateConfig;
 import me.mrxbox98.UltimateCrates.UltimateCrates;
 import me.mrxbox98.UltimateCrates.crates.Crate;
 import me.mrxbox98.UltimateCrates.crates.CrateReward;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -50,7 +51,7 @@ public class CrateChanceEditGui implements Listener {
 
         ItemMeta chance10Meta = chance10.getItemMeta();
 
-        chance10Meta.setDisplayName("Add 10% chance");
+        chance10Meta.setDisplayName(ChatColor.GREEN+ChatColor.BOLD.toString()+"Add 10% chance");
 
         chance10.setItemMeta(chance10Meta);
 
@@ -60,7 +61,7 @@ public class CrateChanceEditGui implements Listener {
 
         ItemMeta chance1Meta = chance1.getItemMeta();
 
-        chance1Meta.setDisplayName("Add 1% chance");
+        chance1Meta.setDisplayName(ChatColor.GREEN+ChatColor.BOLD.toString()+"Add 1% chance");
 
         chance1.setItemMeta(chance1Meta);
 
@@ -70,7 +71,7 @@ public class CrateChanceEditGui implements Listener {
 
         ItemMeta chance01Meta = chance01.getItemMeta();
 
-        chance01Meta.setDisplayName("Add 0.1% chance");
+        chance01Meta.setDisplayName(ChatColor.GREEN+ChatColor.BOLD.toString()+"Add 0.1% chance");
 
         chance01.setItemMeta(chance01Meta);
 
@@ -80,7 +81,7 @@ public class CrateChanceEditGui implements Listener {
 
         ItemMeta minusChance10Meta = minusChance10.getItemMeta();
 
-        minusChance10Meta.setDisplayName("Add 10% chance");
+        minusChance10Meta.setDisplayName(ChatColor.RED+ChatColor.BOLD.toString()+"Remove 10% chance");
 
         minusChance10.setItemMeta(minusChance10Meta);
 
@@ -90,7 +91,7 @@ public class CrateChanceEditGui implements Listener {
 
         ItemMeta minusChance1Meta = minusChance1.getItemMeta();
 
-        minusChance1Meta.setDisplayName("Add 1% chance");
+        minusChance1Meta.setDisplayName(ChatColor.GREEN+ChatColor.BOLD.toString()+"Remove 1% chance");
 
         minusChance1.setItemMeta(minusChance1Meta);
 
@@ -100,7 +101,7 @@ public class CrateChanceEditGui implements Listener {
 
         ItemMeta minusChance01Meta = minusChance01.getItemMeta();
 
-        minusChance01Meta.setDisplayName("Add 0.1% chance");
+        minusChance01Meta.setDisplayName(ChatColor.GREEN+ChatColor.BOLD.toString()+"Remove 0.1% chance");
 
         minusChance01.setItemMeta(minusChance01Meta);
 
