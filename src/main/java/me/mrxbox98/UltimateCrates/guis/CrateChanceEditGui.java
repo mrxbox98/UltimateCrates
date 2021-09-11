@@ -77,7 +77,7 @@ public class CrateChanceEditGui implements Listener {
 
         inventory.setItem(3,chance01);
 
-        ItemStack minusChance10 = new ItemStack(Material.getMaterial("STAINED_GLASS_PANE"), 1, (byte)5);
+        ItemStack minusChance10 = new ItemStack(Material.getMaterial("STAINED_GLASS_PANE"), 1, (byte)14);
 
         ItemMeta minusChance10Meta = minusChance10.getItemMeta();
 
@@ -87,21 +87,21 @@ public class CrateChanceEditGui implements Listener {
 
         inventory.setItem(5,minusChance10);
 
-        ItemStack minusChance1 = new ItemStack(Material.getMaterial("STAINED_GLASS_PANE"), 1, (byte)5);
+        ItemStack minusChance1 = new ItemStack(Material.getMaterial("STAINED_GLASS_PANE"), 1, (byte)14);
 
         ItemMeta minusChance1Meta = minusChance1.getItemMeta();
 
-        minusChance1Meta.setDisplayName(ChatColor.GREEN+ChatColor.BOLD.toString()+"Remove 1% chance");
+        minusChance1Meta.setDisplayName(ChatColor.RED+ChatColor.BOLD.toString()+"Remove 1% chance");
 
         minusChance1.setItemMeta(minusChance1Meta);
 
         inventory.setItem(6,minusChance1);
 
-        ItemStack minusChance01 = new ItemStack(Material.getMaterial("STAINED_GLASS_PANE"), 1, (byte)5);
+        ItemStack minusChance01 = new ItemStack(Material.getMaterial("STAINED_GLASS_PANE"), 1, (byte)14);
 
         ItemMeta minusChance01Meta = minusChance01.getItemMeta();
 
-        minusChance01Meta.setDisplayName(ChatColor.GREEN+ChatColor.BOLD.toString()+"Remove 0.1% chance");
+        minusChance01Meta.setDisplayName(ChatColor.RED+ChatColor.BOLD.toString()+"Remove 0.1% chance");
 
         minusChance01.setItemMeta(minusChance01Meta);
 
