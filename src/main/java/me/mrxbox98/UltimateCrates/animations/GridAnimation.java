@@ -25,14 +25,14 @@ public class GridAnimation {
     {
         ArrayList<ArmorStand> stands = new ArrayList<>();
 
-        for(CrateReward crateReward: crate.rewards)
+        for(int i=0;i<crate.rewards.size();i++)
         {
-            ArmorStand armorStand = player.getWorld().spawn(player.getLocation(),ArmorStand.class);
+            ArmorStand armorStand = player.getWorld().spawn(player.getLocation().add(i,0,0),ArmorStand.class);
 
             armorStand.setGravity(false);
             armorStand.setArms(false);
             armorStand.setBasePlate(false);
-            armorStand.setItemInHand(crateReward.getItemStack());
+            armorStand.setItemInHand(crate.rewards.get(i).getItemStack());
 
             stands.add(armorStand);
         }
