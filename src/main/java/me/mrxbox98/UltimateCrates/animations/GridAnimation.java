@@ -1,7 +1,6 @@
 package me.mrxbox98.UltimateCrates.animations;
 
 import me.mrxbox98.UltimateCrates.crates.Crate;
-import me.mrxbox98.UltimateCrates.crates.CrateReward;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Player;
 
