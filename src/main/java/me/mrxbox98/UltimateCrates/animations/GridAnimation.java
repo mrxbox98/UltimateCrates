@@ -31,11 +31,11 @@ public class GridAnimation {
             armorStand.setGravity(false);
             armorStand.setArms(false);
             armorStand.setBasePlate(false);
+            armorStand.setCanPickupItems(false);
             armorStand.setItemInHand(crate.rewards.get(i).getItemStack());
 
             stands.add(armorStand);
         }
-
 
     }
 
