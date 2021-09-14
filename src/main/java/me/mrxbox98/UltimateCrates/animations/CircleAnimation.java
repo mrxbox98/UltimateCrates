@@ -6,13 +6,13 @@ import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 
-public class GridAnimation {
+public class CircleAnimation {
 
     private Crate crate;
 
     private Player player;
 
-    public GridAnimation(Crate crate, Player player)
+    public CircleAnimation(Crate crate, Player player)
     {
         this.crate=crate;
         this.player=player;
@@ -26,7 +26,7 @@ public class GridAnimation {
 
         for(int i=0;i<crate.rewards.size();i++)
         {
-            ArmorStand armorStand = player.getWorld().spawn(player.getLocation().add(i,0,0),ArmorStand.class);
+            ArmorStand armorStand = player.getWorld().spawn(player.getLocation().add(Math.sin(i/crate.rewards.size()),0,Math.cos(i/crate.rewards.size())),ArmorStand.class);
 
             armorStand.setGravity(false);
             armorStand.setArms(false);
